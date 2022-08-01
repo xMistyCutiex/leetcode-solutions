@@ -1,0 +1,26 @@
+Question: 9. Palindrome Number
+Link: https://leetcode.com/problems/palindrome-number/
+
+Solution:
+
+class Solution {
+public:
+    bool isPalindrome(int x) {
+        if(x<0)
+            return false;
+        else{
+            vector <int> s;
+            vector <int> rev;
+            while(x>0){
+                s.push_back(x%10);
+                rev.push_back(x%10);
+                x/=10;
+            }
+            reverse(s.begin(),s.end());
+            if(s==rev)
+                return true;
+            else
+                return false;
+        }
+    }
+};
